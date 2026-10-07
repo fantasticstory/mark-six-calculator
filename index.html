@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="zh-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="香港六合彩膽拖及複式方案比較：逐注核對、假設中獎模擬、回本及 ROI 計算，完全在本機執行。"><title>六合彩・膽拖／複式比較計算器</title><style>:root{font-family:"Microsoft JhengHei","PingFang TC",system-ui,sans-serif;color:#173137;background:#f1f5f6;font-size:16px;line-height:1.65;--green:#006b58;--line:#dce5e6}*{box-sizing:border-box}body{margin:0}header{height:82px;padding:0 max(24px,calc((100vw - 1180px)/2));display:flex;align-items:center;justify-content:space-between;background:white;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:750}.logo{display:grid;place-items:center;background:var(--green);color:white;width:42px;height:42px;border-radius:50%;font-size:28px}.subbrand{font-size:15px;font-weight:400;padding-left:12px;color:#586e74}main{max-width:1180px;margin:auto;padding:34px 24px}.intro{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.eyebrow{font-size:12px;letter-spacing:2px;color:var(--green);font-weight:800;margin:0}h1{font-size:30px;letter-spacing:-1px;margin:8px 0}p{margin:8px 0 18px;color:#53686e}.textlink,a{color:var(--green)}.textlink{font-size:14px;white-space:nowrap}.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:28px;margin-bottom:24px;box-shadow:0 3px 10px #153c3a03;scroll-margin-top:20px}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}h2{font-size:20px;margin:0}h2>span{font-size:13px;color:var(--green);display:inline-block;margin-right:12px}h3{font-size:17px;margin:0 0 14px}.muted,.hint{color:#61777c;font-size:14px}.badge{background:#eaf4f0;color:#23634f;border-radius:5px;font-size:13px;padding:5px 10px}.setup{display:grid;grid-template-columns:1.3fr 1fr;gap:28px}.fields{display:flex;flex-wrap:wrap;gap:16px;align-items:end}label{display:flex;flex-direction:column;gap:7px;font-size:14px;font-weight:600;min-width:0}input,select,button{font:inherit;font-size:15px}input,select{padding:10px 12px;border:1px solid #bbcdd0;border-radius:7px;color:#16383b;background:white;min-width:0;width:100%;height:46px}input[type=number]{width:110px}button{cursor:pointer;padding:10px 18px;border:1px solid #b8cbc8;border-radius:7px;color:var(--green);background:white;font-weight:600;min-height:44px}button:hover{background:#edf5f3}button:disabled{opacity:.6;cursor:wait}.primary{background:var(--green);color:white;border-color:var(--green);margin-top:20px}.primary:hover{background:#005545}input:focus,select:focus,button:focus-visible,a:focus-visible{outline:3px solid #50bfa7;outline-offset:3px}.hint{margin:10px 0 0}.error{color:#ac332d;margin:10px 0;min-height:0}.error:empty{display:none}#summary{border-radius:10px;padding:22px;background:#eaf5f0;display:flex;flex-direction:column;justify-content:center}#summary strong{font-size:34px;color:#005b49}#summary .sum-line{display:flex;justify-content:space-between;gap:16px;align-items:baseline}.formula{font-size:14px;color:#496e62;border-top:1px solid #cce1d7;padding-top:12px;margin-top:12px}.choices{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}.choices label,.special label{flex-direction:row;align-items:center;font-weight:400}.choices label{border:1px solid #c9d8d8;border-radius:7px;padding:7px 12px;cursor:pointer}.choices label:has(:checked){background:#e9f5f0;border-color:#579b84;color:#00634e}input[type=checkbox]{width:17px;height:17px;accent-color:var(--green)}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px;white-space:nowrap}th{text-align:left;background:#f5f8f8;font-weight:500;color:#5b7177}th,td{padding:13px 12px;border-bottom:1px solid #e4ebec}td:first-child{font-weight:700;color:#12473e}.notice{background:#f5f8f8;border-radius:7px;padding:14px 16px;font-size:14px}.prizes label{flex:1;min-width:112px}.prizes input{width:100%}.special{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px}.result{margin-top:24px}.result:empty{display:none}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}.metric{background:#f3f7f7;border:1px solid #e1e9e9;border-radius:8px;padding:16px;min-width:0}.metric span{font-size:13px;color:#5b7177;display:block}.metric b{font-size:23px;display:block;overflow-wrap:anywhere}.positive{color:#006b58}.negative{color:#a64734}.bars{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}.bar-row{display:grid;grid-template-columns:45px 1fr 70px;align-items:center;gap:10px;font-size:14px}.track{height:9px;background:#edf2f2;border-radius:4px;overflow:hidden}.fill{height:100%;background:#348e77}.bar-row:first-child .fill{background:#c69736}.bar-row>span:last-child{text-align:right}.result-foot{font-size:14px;border-top:1px solid var(--line);padding-top:14px;margin-top:20px}details{font-size:14px;margin-top:16px}summary{cursor:pointer;color:var(--green)}.number-inputs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.scenario-grid>div{background:#f8fafa;border:1px solid #dde7e7;border-radius:10px;padding:20px}.scenario-grid .fields{margin-top:16px}.scenario-grid .metrics{grid-template-columns:1fr 1fr}.scenario-grid .bars{grid-template-columns:1fr}.quick{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.scenario-grid label:has(select){margin-bottom:12px}footer{font-size:13px;padding:0 4px 18px}footer p{margin-bottom:10px}progress{width:100%;accent-color:var(--green)}[hidden]{display:none!important}@media(max-width:900px){.setup{grid-template-columns:1fr}.intro{display:block}.textlink{display:inline-block;margin-top:4px}.scenario-grid{grid-template-columns:1fr}.metrics{grid-template-columns:1fr 1fr}}@media(max-width:580px){header{padding:0 16px;height:70px}.subbrand{display:none}header>.badge{font-size:12px}main{padding:24px 14px}h1{font-size:25px}.panel{padding:20px 16px}.section-title{align-items:flex-start;flex-direction:column;gap:8px}.fields>label{flex:1;min-width:110px}input[type=number]{width:100%}.number-inputs,.bars{grid-template-columns:1fr}.metric{padding:12px}.metric b{font-size:20px}th,td{padding:10px 8px;font-size:13px}.special{gap:12px}.scenario-grid>div{padding:14px}.brand{font-size:20px}}
+.comparison-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:24px 0}.comparison-card{min-width:0;border:1px solid #cddeda;border-radius:12px;padding:20px;background:#fcfefd}.comparison-card h3{margin:0}.comparison-card .section-title{margin-bottom:16px}.comparison-card .fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.comparison-card input[type=number]{width:100%}.comparison-card .metrics{grid-template-columns:1fr 1fr}.comparison-card .bars{grid-template-columns:1fr}.comparison-card .metric b{font-size:20px}.card-hits{border-top:1px solid var(--line);margin-top:16px;padding-top:12px}.card-hits h4{margin:0 0 12px;font-size:15px}.preset-choices .choices{margin-top:14px}.comparison-card .notice{background:#fff7e5;color:#715420}@media(max-width:850px){.comparison-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:16px;padding-bottom:10px;margin:24px 0;-webkit-overflow-scrolling:touch}.comparison-cards::-webkit-scrollbar{height:6px}.comparison-cards::-webkit-scrollbar-thumb{background:#c9d8d8;border-radius:3px}.comparison-card{flex:0 0 100%;scroll-snap-align:start}}.mobile-compare{display:none}@media(max-width:850px){.mobile-compare{display:block}}
+</style></head>
+<body><header><div class="brand"><span class="logo">6</span><div>六合彩 <span class="subbrand">組合研究室</span></div></div><span class="badge">本機計算 · 無需登入</span></header>
+<main><div class="intro"><div><p class="eyebrow">MARK SIX CALCULATOR</p><h1>膽拖／複式比較計算器</h1><p>看清每張飛的組合、成本，以及不同開彩結果下的派彩。</p></div></div>
+<section class="panel"><div class="section-title"><h2><span>01</span> 今期派彩設定</h2><span class="badge">每 $10 全注的派彩</span></div><p class="notice"><strong>頭獎、二獎、三獎屬彩池均分獎項，馬會不會事先公佈，必須喺開獎後自己手動輸入實際金額</strong>（頭獎請填「每全注派彩」，不是整個頭獎獎金池）。頭獎預設 $8,000,000 只作假設示範，二、三獎預設為 0；全部金額均可修改；半注收入自動減半。</p><p class="hint">改動派彩後，下方所有已計算方案會即時更新；亦可撳「重新計算」確認。</p><div id="prices" class="fields prizes"></div><button id="refresh-prices" class="primary">重新計算</button><p id="prices-error" class="error" role="alert"></p></section><section class="panel"><div class="section-title"><h2><span>02</span> 方案及派彩比較</h2><span class="muted">每張方案可獨立修改，輸入後自動計算</span></div><p>每張卡都可選 1 至 5 膽、自訂腳數，並輸入中正選的膽／腳數及特別號。總派彩按上方金額計算。</p><button id="new-comparison" class="primary">＋ 新增自訂方案</button><details class="preset-choices"><summary>快捷方案（可再修改）</summary><div id="choices" class="choices"></div></details><div class="mobile-compare"><h3>一覽比較</h3><p class="hint">呢張細表同時列晒已選方案，方便一眼比較；落面每張卡可左右滑動，再睇詳情、改設定。</p><div class="table-scroll"><table><thead><tr><th>玩法</th><th>成本</th><th>總派彩</th><th>淨收益</th></tr></thead><tbody id="comparison"></tbody></table></div></div><div id="comparison-cards" class="comparison-cards"></div></section>
+<footer><p>每個 6 號碼組合只計其所屬獎項，所有中獎及未中獎注數合計必須等於總注數。組合數以實際逐注枚舉核對。</p><p>派彩為按輸入金額計算的估算，並不代表中獎預測。<a href="https://special.hkjc.com/e-win/en-US/betting-info/marksix/prize-qualification/" target="_blank" rel="noopener">馬會獎項及注額規則 ↗</a> · <a href="https://special.hkjc.com/e-win/zh-HK/betting-info/marksix/allocation-of-prize-fund/" target="_blank" rel="noopener">獎金分配 ↗</a></p></footer></main><script>/* 純計算核心：瀏覽器與 Node 測試共用，沒有網絡或資料庫。 */
+(function (root) {
+  'use strict';
+  const names = ['沒有中獎', '頭獎', '二獎', '三獎', '四獎', '五獎', '六獎', '七獎'];
+  function choose(n, k) {
+    if (!Number.isInteger(n) || !Number.isInteger(k) || k < 0 || n < k) return 0;
+    k = Math.min(k, n - k); let v = 1;
+    for (let i = 1; i <= k; i++) v = v * (n - k + i) / i;
+    return Math.round(v);
+  }
+  function validate(p) {
+    if (!['single','multiple','banker'].includes(p.type)) throw Error('請選擇投注類型。');
+    if (![p.d,p.f].every(Number.isInteger)) throw Error('號碼數必須是整數。');
+    if (p.type === 'banker' && (p.d < 1 || p.d > 5)) throw Error('膽數必須是 1 至 5。');
+    if (p.type !== 'banker' && p.d !== 0) throw Error('單式／複式不設膽。');
+    if (p.f < 6-p.d || p.d+p.f > 49) throw Error('總號碼須為 6 至 49 個，腳數須足夠組成每注 6 個號碼。');
+    if (p.type === 'single' && p.f !== 6) throw Error('單式必須有 6 個號碼。');
+    if (p.type === 'multiple' && p.f < 7) throw Error('複式至少選 7 個號碼；6 個請選單式。');
+    return choose(p.f, 6-p.d);
+  }
+  function label(p) { return p.type==='banker' ? `${p.d}膽${p.f}腳` : p.type==='single' ? '6號碼單式' : `${p.f}號碼複式`; }
+  function tier(m, s) { return m===6 ? 1 : m===5 ? (s?2:3) : m===4 ? (s?4:5) : m===3 ? (s?6:7) : 0; }
+  function parse(text, title) {
+    const tokens=text.trim().split(/[\s,，、;；]+/).filter(Boolean);
+    if (tokens.some(t=>!/^\d{1,2}$/.test(t))) throw Error(`${title}：請用空格或逗號分隔 1 至 49 的整數。`);
+    const a=tokens.map(Number);
+    if(a.some(n=>n<1||n>49)||new Set(a).size!==a.length) throw Error(`${title}：號碼必須在 1 至 49 之間，而且不可重複。`);
+    return a;
+  }
+  function actual(p,b,f,draw,extra) {
+    validate(p);
+    if(b.length!==p.d||f.length!==p.f) throw Error('輸入的膽／腳數目與方案不符。');
+    const all=[...b,...f];
+    if(all.some(n=>!Number.isInteger(n)||n<1||n>49)||new Set(all).size!==all.length) throw Error('膽與腳不可重複，且必須為 1 至 49 的整數。');
+    if(draw.length!==6||new Set(draw).size!==6||draw.some(n=>!Number.isInteger(n)||n<1||n>49)||!Number.isInteger(extra)||extra<1||extra>49||draw.includes(extra)) throw Error('開彩結果須為 6 個不同正選及 1 個不重複的特別號（1 至 49）。');
+    return {p,b,f,draw,extra};
+  }
+  function hypothetical(p,h) {
+    validate(p); const {bd,ff,bs,fs}=h;
+    if(![bd,ff].every(Number.isInteger)||bd<0||ff<0||bd>p.d||ff>p.f||bd+ff>6) throw Error('中正選的膽／腳不可超出所選數目，合共最多 6 個。');
+    if((bs&&fs)||bd+Number(bs)>p.d||ff+Number(fs)>p.f) throw Error('只有 1 個特別號；它不可同時是正選，亦不可同時在膽及腳。');
+    if(7-bd-ff-Number(bs)-Number(fs)>49-p.d-p.f) throw Error('其餘號碼不足以容納未選中的正選及特別號，這個開彩情境不可能發生。');
+    const b=Array.from({length:p.d},(_,i)=>i+1), f=Array.from({length:p.f},(_,i)=>p.d+i+1);
+    let next=p.d+p.f+1; const draw=[...b.slice(0,bd),...f.slice(0,ff)];
+    while(draw.length<6) draw.push(next++);
+    const extra=bs?b[bd]:fs?f[ff]:next;
+    return actual(p,b,f,draw,extra);
+  }
+  // 逐注枚舉索引，不儲存全部組合；每 40,000 注讓出主執行緒，避免大型複式卡住介面。
+  async function enumerate(ticket, options={}) {
+    const {p,b,f,draw,extra}=ticket, total=validate(p), k=6-p.d;
+    const hit=new Set(draw), base=b.reduce((s,n)=>s+Number(hit.has(n)),0), special=b.includes(extra);
+    const fm=f.map(n=>Number(hit.has(n))), fs=f.map(n=>n===extra);
+    const ix=Array.from({length:k},(_,i)=>i), counts=Array(8).fill(0); let done=0;
+    while(true) {
+      let m=base,s=special;
+      for(let j=0;j<k;j++){m+=fm[ix[j]];s=s||fs[ix[j]];}
+      counts[tier(m,s)]++; done++;
+      let pos=k-1; while(pos>=0&&ix[pos]===f.length-k+pos) pos--;
+      if(pos<0) break;
+      ix[pos]++; for(let j=pos+1;j<k;j++) ix[j]=ix[j-1]+1;
+      if(done%40000===0){
+        if(options.cancelled?.()) throw Error('計算已取消。');
+        options.progress?.(done/total);
+        await new Promise(resolve=>setTimeout(resolve,0));
+      }
+    }
+    if(counts.reduce((a,v)=>a+v,0)!==total) throw Error('組合總數核對失敗。');
+    return {counts,total};
+  }
+  function finance(result,prices,stake) {
+    if(![5,10].includes(stake)||prices.length!==7||prices.some(n=>!Number.isFinite(n)||n<0)) throw Error('派彩必須是非負數。');
+    const incomes=prices.map((v,i)=>Math.round(v*100*stake/10)*result.counts[i+1]/100);
+    const payout=incomes.reduce((a,v)=>a+v,0),cost=result.total*stake,net=payout-cost;
+    return {incomes,payout,cost,net,roi:net/cost*100};
+  }
+  const api={names,choose,validate,label,tier,parse,actual,hypothetical,enumerate,finance};
+  if(typeof module!=='undefined'&&module.exports) module.exports=api; else root.MarkSix=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>/* 每張比較卡獨立保留投注設定與中獎情境；沿用逐注枚舉引擎。 */
+const comparisonStates = new Map();
+const comparisonTimers = new Map();
+function comparisonState(i) {
+  if (!comparisonStates.has(i)) {
+    const p=plans[i],bd=Math.min(p.d,1);
+    comparisonStates.set(i,{bd,ff:4-bd,bs:false,fs:false,amount:10});
+  }
+  return comparisonStates.get(i);
+}
+function comparisonTable() {
+  $('comparison').innerHTML=[...selected].map(i=>{
+    const p=plans[i],h=comparisonState(i);
+    try { M.validate(p); } catch { return `<tr><td>方案 ${i+1}</td><td colspan="3">請修正呢個方案</td></tr>`; }
+    const r=saved['compare-'+i]?.[0]?.r; let fin;
+    try { if(r) fin=M.finance(r,prices(),h.amount); } catch {}
+    return `<tr><td>${M.label(p)}</td><td>${fin?money(fin.cost):'計算中'}</td><td>${fin?money(fin.payout):'計算中'}</td><td>${fin?(fin.net>=0?'+':'−')+money(Math.abs(fin.net)):'—'}</td></tr>`;
+  }).join('')||'<tr><td colspan="4">請新增方案，或勾選一個快捷方案。</td></tr>';
+}
+function renderComparisonEditor() {
+  // 重建卡片前，取消未完成的枚舉及延遲工作。
+  for(const [i,timer] of comparisonTimers){clearTimeout(timer);comparisonTimers.delete(i);}
+  for(const key of Object.keys(jobs)) if(key.startsWith('compare-')) {jobs[key]++;delete saved[key];}
+  $('choices').innerHTML=plans.map((p,i)=>`<label><input type="checkbox" data-plan="${i}" ${selected.has(i)?'checked':''}>${M.label(p)}</label>`).join('');
+  $('comparison-cards').innerHTML=[...selected].map(i=>{
+    const p=plans[i],h=comparisonState(i);
+    return `<article class="comparison-card" data-card="${i}"><div class="section-title"><h3 id="card-title-${i}">${M.label(p)}</h3><button type="button" data-remove="${i}" aria-label="移除方案 ${i+1}">移除</button></div><div class="fields"><label>玩法<select id="card-type-${i}" data-setting="type"><option value="banker" ${p.type==='banker'?'selected':''}>膽拖</option><option value="multiple" ${p.type==='multiple'?'selected':''}>複式</option><option value="single" ${p.type==='single'?'selected':''}>單式</option></select></label><label>注額<select id="card-stake-${i}" data-setting="stake"><option value="10" ${h.amount===10?'selected':''}>全注 $10</option><option value="5" ${h.amount===5?'selected':''}>半注 $5</option></select></label><label>膽數<select id="card-d-${i}" data-setting="d">${[1,2,3,4,5].map(d=>`<option value="${d}" ${d===p.d?'selected':''}>${d} 膽</option>`).join('')}</select></label><label>腳／號碼數<input id="card-f-${i}" data-setting="f" type="number" step="1" value="${p.f}"></label></div><p id="card-cost-${i}" class="hint"></p><div class="card-hits"><h4>假設這張飛中了……</h4>${controls('card-'+i,h.bd,h.ff,h.bs,h.fs)}</div><div id="compare-${i}" class="result" aria-live="polite"></div></article>`;
+  }).join('');
+  for(const i of selected){updateComparisonCard(i);queueComparison(i);}
+  comparisonTable();
+}
+function updateComparisonCard(i) {
+  const p=plans[i],h=comparisonState(i),single=p.type==='single';
+  $('card-d-'+i).disabled=p.type!=='banker';$('card-f-'+i).disabled=single;
+  $('card-f-'+i).min=p.type==='multiple'?7:6-p.d;$('card-f-'+i).max=49-p.d;
+  $('card-stake-'+i).options[1].disabled=single;
+  if(single){h.amount=10;$('card-stake-'+i).value='10';}
+  bounds('card-'+i,p);
+  $('card-title-'+i).textContent=M.label(p);
+  try{const n=M.validate(p);$('card-cost-'+i).textContent=`${p.d+p.f} 個號碼 · 每注 ${structure(p)} · ${fmt(n)} 注 · 成本 ${money(n*h.amount)}`;}
+  catch(e){$('card-cost-'+i).textContent=e.message;}
+}
+function queueComparison(i) {
+  const id='compare-'+i;
+  clearTimeout(comparisonTimers.get(i));invalidate(id);comparisonTable();
+  comparisonTimers.set(i,setTimeout(()=>{
+    comparisonTimers.delete(i);
+    if(!selected.has(i))return;
+    try{const p={...plans[i]},h=hits('card-'+i);Object.assign(comparisonState(i),h);calculate(id,[{ticket:M.hypothetical(p,h),s:comparisonState(i).amount}]);}
+    catch(e){error(id,e);comparisonTable();}
+  },250));
+}
+function bindComparisonEditor() {
+  $('new-comparison').onclick=()=>{const i=plans.length;plans.push({type:'banker',d:2,f:8});selected.add(i);comparisons();};
+  $('comparison-cards').addEventListener('input',e=>{
+    const card=e.target.closest('[data-card]');if(!card)return;
+    const i=Number(card.dataset.card),p=plans[i],h=comparisonState(i);
+    const type=$('card-type-'+i).value;
+    p.type=type;p.d=type==='banker'?Number($('card-d-'+i).value):0;
+    if(e.target.dataset.setting==='type'){
+      if(type==='single')$('card-f-'+i).value=6;
+      else if(type==='multiple'&&Number($('card-f-'+i).value)<7)$('card-f-'+i).value=7;
+    }
+    p.f=Number($('card-f-'+i).value);h.amount=Number($('card-stake-'+i).value);
+    // 不重建正在輸入的欄位，保留焦點；空白及不可能的情境交由驗證處理。
+    updateComparisonCard(i);
+    try{Object.assign(h,hits('card-'+i));}catch{}
+    queueComparison(i);
+  });
+  $('comparison-cards').addEventListener('click',e=>{
+    const button=e.target.closest('[data-remove]');if(!button)return;
+    selected.delete(Number(button.dataset.remove));comparisons();
+  });
+}
+</script><script>'use strict';
+const M=MarkSix,$=id=>document.getElementById(id), fmt=n=>n.toLocaleString('zh-HK'), money=n=>'$'+n.toLocaleString('en-HK',{minimumFractionDigits:2,maximumFractionDigits:2});
+const plans=[{type:'banker',d:1,f:8},{type:'banker',d:1,f:9},{type:'banker',d:1,f:10},{type:'banker',d:3,f:8},{type:'banker',d:3,f:15},{type:'banker',d:5,f:22},{type:'multiple',d:0,f:11}];
+const selected=new Set([3,6]); const jobs={}; const saved={};
+// 所有動態 HTML 只插入由程式產生的標籤及已驗證數字；錯誤訊息使用 textContent。
+function fmtInput(n){return n.toLocaleString('en-HK',{maximumFractionDigits:2});}
+function parseMoneyInput(v){const s=v.replace(/,/g,'').trim();if(!/^\d+(\.\d{1,2})?$/.test(s))return null;return Number(s);}
+function prices(){return Array.from({length:7},(_,i)=>{const n=parseMoneyInput($('price-'+i).value);if(n===null)throw Error('請完整輸入七個非負派彩金額，可用逗號分隔（例如 18,000,000），最多兩位小數。');return n;});}
+function structure(p){return p.d?`${p.d}膽 + ${6-p.d}腳`:'任選 6 個號碼';}
+function comparisons(){
+  renderComparisonEditor();
+}
+function controls(prefix,bd,ff,bs=false,fs=false){const bdVal=bs?bd+0.5:bd,ffVal=fs?ff+0.5:ff;return `<div class="fields"><label>中正選的膽數<input id="${prefix}-bd" type="number" min="0" max="5.5" step="0.5" value="${bdVal}"></label><label>中正選的腳／號碼數<input id="${prefix}-ff" type="number" min="0" max="6.5" step="0.5" value="${ffVal}"></label></div><p class="hint">輸入 .5 代表連特別號都中埋（例如 5.5 = 5 個正選 + 特別號）；只可以喺膽或腳其中一邊輸入 .5。</p>`;}
+function splitHit(v,label){const n=Number(v);if(!Number.isFinite(n)||n<0)throw Error(`請輸入${label}中獎數目。`);const whole=Math.floor(n+1e-9);const frac=Math.round((n-whole)*10)/10;if(frac!==0&&frac!==0.5)throw Error(`${label}數目只可以是整數，或以 .5 表示連中特別號（例如 5.5）。`);return {n:whole,special:frac===0.5};}
+function hits(prefix){for(const s of ['bd','ff'])if($(prefix+'-'+s).value==='')throw Error('請輸入中正選數目。');const b=splitHit($(prefix+'-bd').value,'膽'),f=splitHit($(prefix+'-ff').value,'腳／號碼');if(b.special&&f.special)throw Error('只有 1 個特別號，膽同腳唔可以同時中特別號。');return {bd:b.n,ff:f.n,bs:b.special,fs:f.special};}
+function bounds(prefix,p){$(prefix+'-bd').max=p.d+0.5;$(prefix+'-bd').disabled=!p.d;if(!p.d)$(prefix+'-bd').value=0;$(prefix+'-ff').max=Math.min(6,p.f)+0.5;}
+function render(r,p,s,title){const fin=M.finance(r,prices(),s),max=Math.max(1,...r.counts.slice(1)),won=r.total-r.counts[0];
+  return `${r.counts.slice(1).some((n,i)=>n>0&&prices()[i]===0)?'<p class="notice">有中獎獎項的派彩仍為 $0；下列收入尚未包含這些獎金，請補填派彩。</p>':''}${title?`<h3>${title}</h3>`:''}<p class="hint">${M.label(p)} · ${structure(p)} · ${s===5?'半注':'全注'} · ${fmt(won)} 注中獎</p><div class="metrics"><div class="metric"><span>投注成本</span><b>${money(fin.cost)}</b></div><div class="metric"><span>總派彩</span><b>${money(fin.payout)}</b></div><div class="metric"><span>${fin.net>=0?'淨盈利':'淨虧損'}</span><b class="${fin.net>=0?'positive':'negative'}">${fin.net>=0?'+':'−'}${money(Math.abs(fin.net))}</b></div><div class="metric"><span>回報率 ROI</span><b class="${fin.net>=0?'positive':'negative'}">${fin.roi>=0?'+':''}${fin.roi.toFixed(2)}%</b></div></div><div class="bars">${r.counts.slice(1).map((n,i)=>`<div class="bar-row"><span>${M.names[i+1]}</span><div class="track"><div class="fill" style="width:${n/max*100}%"></div></div><span>${fmt(n)} 注</span></div>`).join('')}</div><div class="result-foot">沒有中獎：<b>${fmt(r.counts[0])} 注</b> · 核對總數：${fmt(r.total)} 注</div><details open><summary>查看各獎項收入及計算方法</summary><div class="table-scroll"><table><thead><tr><th>獎項</th><th>要求</th><th>注數</th><th>收入</th></tr></thead><tbody>${['6 正選','5 正選 + 特別號','5 正選','4 正選 + 特別號','4 正選','3 正選 + 特別號','3 正選'].map((t,i)=>`<tr><td>${M.names[i+1]}</td><td>${t}</td><td>${fmt(r.counts[i+1])}</td><td>${money(fin.incomes[i])}</td></tr>`).join('')}</tbody><tfoot><tr><td colspan="3"><strong>總派彩（各獎項收入加埋）</strong></td><td><strong>${money(fin.payout)}</strong></td></tr></tfoot></table></div><p class="hint">收入 = 中獎注數 × 每全注派彩 × ${s/10}。淨收益 = 總派彩 − 投注成本；ROI = 淨收益 ÷ 投注成本 × 100%。每注收入四捨五入至仙。</p></details>`;
+}
+function error(id,e){$(id).replaceChildren();const el=document.createElement('p');el.className='error';el.setAttribute('role','alert');el.textContent=e.message;$(id).append(el);}
+// 修改相關輸入即取消舊工作，清除舊結果，以免將舊數字誤當新結果。
+function invalidate(id){jobs[id]=(jobs[id]||0)+1;delete saved[id];$(id).textContent='設定已更新，請重新計算。';}
+async function calculate(id,tickets){const token=(jobs[id]||0)+1;jobs[id]=token;delete saved[id];
+  try{prices();$(id).innerHTML='<p>正在逐注核對…</p><progress max="1" value="0"></progress>';
+    const results=[];
+    for(let i=0;i<tickets.length;i++){const t=tickets[i];const r=await M.enumerate(t.ticket,{cancelled:()=>jobs[id]!==token,progress:v=>{if(jobs[id]===token)$(id).querySelector('progress').value=(i+v)/tickets.length;}});results.push({...t,r});}
+    if(jobs[id]!==token)return;saved[id]=results;display(id);
+  }catch(e){if(jobs[id]===token)error(id,e);}
+}
+function display(id){try{$(id).innerHTML=saved[id].map(t=>{const html=render(t.r,t.ticket.p,t.s,t.title);return html;}).join('');}catch(e){error(id,e);}if(id.startsWith('compare-'))comparisonTable();}
+$('prices').innerHTML=[8000000,0,0,9600,640,320,40].map((v,i)=>`<label>${M.names[i+1]} ($)${i<3?' <span class="badge">需自行輸入</span>':''}<input id="price-${i}" type="text" inputmode="decimal" value="${fmtInput(v)}"></label>`).join('');
+$('prices').addEventListener('blur',e=>{if(e.target.tagName!=='INPUT')return;const n=parseMoneyInput(e.target.value);if(n!==null)e.target.value=fmtInput(n);},true);
+comparisons();
+$('choices').onchange=e=>{const i=Number(e.target.dataset.plan);if(e.target.checked)selected.add(i);else selected.delete(i);comparisons();};
+$('prices').oninput=()=>{$('prices-error').textContent='';Object.keys(saved).forEach(display);comparisonTable();};
+$('refresh-prices').onclick=()=>{try{prices();$('prices-error').textContent='';Object.keys(saved).forEach(display);comparisonTable();}catch(e){$('prices-error').textContent=e.message;}};
+bindComparisonEditor();
+
+
+
+</script></body></html>
+
