@@ -15,13 +15,12 @@ function comparisonTable() {
     const r=saved['compare-'+i]?.[0]?.r; let fin;
     try { if(r) fin=M.finance(r,prices(),h.amount); } catch {}
     return `<tr><td>${M.label(p)}</td><td>${fin?money(fin.cost):'計算中'}</td><td>${fin?money(fin.payout):'計算中'}</td><td>${fin?(fin.net>=0?'+':'−')+money(Math.abs(fin.net)):'—'}</td></tr>`;
-  }).join('')||'<tr><td colspan="4">請新增方案，或勾選一個快捷方案。</td></tr>';
+  }).join('')||'<tr><td colspan="4">請撳「＋ 新增自訂方案」加入方案。</td></tr>';
 }
 function renderComparisonEditor() {
   // 重建卡片前，取消未完成的枚舉及延遲工作。
   for(const [i,timer] of comparisonTimers){clearTimeout(timer);comparisonTimers.delete(i);}
   for(const key of Object.keys(jobs)) if(key.startsWith('compare-')) {jobs[key]++;delete saved[key];}
-  $('choices').innerHTML=plans.map((p,i)=>`<label><input type="checkbox" data-plan="${i}" ${selected.has(i)?'checked':''}>${M.label(p)}</label>`).join('');
   $('comparison-cards').innerHTML=[...selected].map(i=>{
     const p=plans[i],h=comparisonState(i);
     return `<article class="comparison-card" data-card="${i}"><div class="section-title"><h3 id="card-title-${i}">${M.label(p)}</h3><button type="button" data-remove="${i}" aria-label="移除方案 ${i+1}">移除</button></div><div class="fields"><label>玩法<select id="card-type-${i}" data-setting="type"><option value="banker" ${p.type==='banker'?'selected':''}>膽拖</option><option value="multiple" ${p.type==='multiple'?'selected':''}>複式</option><option value="single" ${p.type==='single'?'selected':''}>單式</option></select></label><label>注額<select id="card-stake-${i}" data-setting="stake"><option value="10" ${h.amount===10?'selected':''}>全注 $10</option><option value="5" ${h.amount===5?'selected':''}>半注 $5</option></select></label><label>膽數<select id="card-d-${i}" data-setting="d">${[1,2,3,4,5].map(d=>`<option value="${d}" ${d===p.d?'selected':''}>${d} 膽</option>`).join('')}</select></label><label>腳／號碼數<input id="card-f-${i}" data-setting="f" type="number" step="1" value="${p.f}"></label></div><p id="card-cost-${i}" class="hint"></p><div class="card-hits"><h4>假設這張飛中了……</h4>${controls('card-'+i,h.bd,h.ff,h.bs,h.fs)}</div><div id="compare-${i}" class="result" aria-live="polite"></div></article>`;
